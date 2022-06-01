@@ -1,17 +1,8 @@
 pub const arch = @import("arch.zig");
 
+const Atomic = @import("std").atomic.Atomic;
 const KernelArgs = arch.rv64.KernelArgs;
 
-/// The kernel entry point.
-///
-/// Takes a const pointer to a KernelArgs struct, containing the parameters of the
-/// kernel executable.
-pub export fn kernel_start(args_ptr: *const KernelArgs) noreturn {
-   var env = e: {
-      var args = &*args_ptr;
-
-      const kernel_size = 
-   };
-
-
+pub export fn main(cpus: Atomic(usize), env: [*]const u8) noreturn {
+   
 }
