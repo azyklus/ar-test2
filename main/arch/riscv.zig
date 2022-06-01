@@ -8,7 +8,7 @@ const Ordering = std.atomic.Ordering;
 
 const KERNEL_BASE: Atomic(usize) = Atomic.init(0);
 const KERNEL_SIZE: Atomic(usize) = Atomic.init(0);
-const CPU_COUNT: Atomic(usize) = Atomic.init(0);
+pub const CPU_COUNT: Atomic(usize) = Atomic.init(0);
 
 /// Test of zero in BSS.
 const BSS_TEST_ZERO: usize = 0;
