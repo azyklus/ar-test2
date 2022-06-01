@@ -10,6 +10,7 @@ pub fn build(b: *std.build.Builder) void {
     libBs.install();
 
     const libAr = b.addStaticLibrary("ar-test2", "main/index.zig");
+    libAr.addPackagePath("base", "lib/base/index.zig");
     libAr.setBuildMode(mode);
     libAr.install();
 
