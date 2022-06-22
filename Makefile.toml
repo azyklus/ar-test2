@@ -4,18 +4,30 @@ command = "cargo"
 args = ["fmt", "--", "--emit files"]
 
 [tasks.clean]
-command = "cargo"
-args = ["clean"]
+command = "rm"
+args = [
+  "-r",
+  "--force",
+  "./out/"
+]
 
 [tasks.build]
-command = "cargo"
+command = "zig"
 args = [
-   "build", 
+   "build-", 
    "-Z", 
    "unstable-options", 
    "--verbose"
 ]
 dependencies = ["clean"]
+
+[tasks.build_kernel]
+command = "zig"
+args = [
+  "build-lib",
+  "--name",
+  ""
+]
 
 [tasks.test]
 command = "cargo"

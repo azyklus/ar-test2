@@ -19,7 +19,7 @@ pub inline export fn cpu_count() usize {
 
 pub var INIT_ENV: [*]u8 = [_]{};
 
-pub export fn main(cpus: usize, env: [*]const u8) callconv(.C) noreturn {
+pub export fn kernel_main(cpus: usize, env: [*]const u8) callconv(.C) noreturn {
    CPU_ID.store(0, Ordering.SeqCst);
    CPU_COUNT.store(cpus, Ordering.SeqCst);
 
